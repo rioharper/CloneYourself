@@ -11,7 +11,7 @@ parser.add_argument('--max_tokens', type=int, default=75, help='How long responc
 parser.add_argument('--temp', type=float, default=0.9, help='How whacky a response can be')
 parser.add_argument('--presence_penalty', type=float, default=0.1 , help='Penalty for repeated topics')
 args = parser.parse_args()
-openai.api_key = "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"
+
 log = "Context: " + args.prompt + "\n\n###\n\n"
 counter = 0
 
