@@ -61,7 +61,7 @@ class question(dataset):
             print("Skipping")
             return
         self.entry = {
-            "prompt": "a human interviews an AI about its opinions on a topic" + "\n\n###\n\nHuman: " + self.question + "\nAI: ",
+            "prompt": self.question + "\nAI: ",
             "completion": self.answer + "\n",
             "question": self.question
         }
@@ -90,9 +90,10 @@ class prompt(dataset):
             print("Skipping")
             return
         self.entry = {
-            "prompt": "Context: An AI and a human are speaking" + self.context + "\n\n###\n\nHuman: " + self.question + "\nAI:",
+            "prompt": self.question + "\nAI:",
             "completion": " " + self.answer + "\n",
-            "question": self.question
+            "question": self.question,
+            "context": "Context: An AI and a human are speaking" + self.context + "\n",
         }
         self.dumpData()
     
