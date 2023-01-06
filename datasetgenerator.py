@@ -6,10 +6,10 @@ import os
 import jsonlines
 from openai.wandb_logger import WandbLogger
 
-with open("questions.csv") as questions_file:
+with open("questions.csv", encoding="utf8") as questions_file:
     questions = np.loadtxt(questions_file, dtype=str, delimiter=">")
 
-with open("prompts.csv") as prompts_file:
+with open("prompts.csv", encoding="utf8") as prompts_file:
     prompts = np.loadtxt(prompts_file, dtype=str, delimiter="|")
 
 class dataset():
